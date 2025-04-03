@@ -22,7 +22,7 @@ function Projects() {
       description: "Developed a DIY 3D scanner using Arduino Nano, stepper motors, and an IR sensor, processing data in C/C++ and converting to STL with MeshLab.",
       longDescription: "I built a DIY 3D scanner using an Arduino Nano, NEMA17 stepper motors, and an IR sensor to capture 3D point cloud data. The system, programmed in C/C++, controlled the stepper motors and processed scanned data. The captured point cloud was converted into STL files using MeshLab for 3D printing, enabling object reconstruction and digital fabrication.",
       technologies: ["Arduino IDE", "C", "C++", "Meshlab"],
-      imageUrl: "/scanner.jpg",
+      imageUrl: "/images/scanner.jpg",
       // demoUrl: "https://example.com/project2",
       // codeUrl: "https://github.com/yourusername/project2"
     }
