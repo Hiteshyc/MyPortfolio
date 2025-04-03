@@ -25,31 +25,37 @@ function Contact({ isModal = false, onClose }) {
     e.preventDefault();
     setFormStatus({ submitting: true, submitted: false, error: null });
 
-    emailjs.send(
-      'service_7c9itd2',  // Replace with your EmailJS Service ID
-      'template_seaz7qy',  // Replace with your EmailJS Template ID
-      {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-      },
-      'sLqQXEA7Nr3CU-zGH'  // Replace with your EmailJS Public Key
-    )
-    .then(() => {
-      setFormStatus({ submitting: false, submitted: true, error: null });
-      setFormData({ name: '', email: '', subject: '', message: '' });
+    // ✅ Log user input to terminal
+    console.log("Sending email with the following details:", formData);
 
-      setTimeout(() => {
-        setFormStatus({ submitting: false, submitted: false, error: null });
-        if (isModal && onClose) onClose();
-      }, 3000);
-    })
-    .catch((error) => {
-      console.error('Email send error:', error);
-      setFormStatus({ submitting: false, submitted: false, error: 'Failed to send message. Please try again.' });
-    });
+    // ✅ Ensure all details are sent to EmailJS
+    emailjs.send(
+      'service_7c9itd2', // Your EmailJS Service ID
+      'template_seaz7qy', // Your EmailJS Template ID
+      {
+        name: formData.name,      // ✅ Fix: Ensure "name" is passed
+        email: formData.email,    // ✅ Fix: Ensure "email" is passed
+        subject: formData.subject, // ✅ Fix: Ensure "subject" is passed
+        message: formData.message, // ✅ Fix: Ensure "message" is passed
+        time: new Date().toLocaleString() // ✅ Add time if needed
+      },
+      'sLqQXEA7Nr3CU-zGH' // Your EmailJS Public Key
+    )
+      .then(() => {
+        setFormStatus({ submitting: false, submitted: true, error: null });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+
+        setTimeout(() => {
+          setFormStatus({ submitting: false, submitted: false, error: null });
+          if (isModal && onClose) onClose();
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error('Email send error:', error);
+        setFormStatus({ submitting: false, submitted: false, error: 'Failed to send message. Please try again.' });
+      });
   };
+
 
   return (
     <div className={`contact-wrapper ${isModal ? 'modal' : ''}`}>
@@ -151,8 +157,8 @@ function Contact({ isModal = false, onClose }) {
 
               {formStatus.error && <p className="error-message">{formStatus.error}</p>}
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="btn primary-btn submit-btn"
                 disabled={formStatus.submitting}
               >
