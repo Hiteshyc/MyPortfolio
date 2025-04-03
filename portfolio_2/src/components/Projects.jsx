@@ -12,7 +12,7 @@ function Projects() {
       description: "Developed a rocker-bogie robot using Arduino Uno and C/C++, integrating an L298 motor driver for Bluetooth control, ensuring stability and obstacle traversal.o",
       longDescription: "I built a rocker-bogie robotic vehicle using an Arduino Uno, programmed in C/C++ for control. The system integrates an L298 motor driver and Bluetooth module for remote operation. Designed for enhanced stability and obstacle traversal, the vehicle efficiently navigates rough terrains, mimicking NASA’s Mars rovers.",
       technologies: ["Arduino IDE", "C", "C++"],
-      imageUrl: "/mars.jpg",
+      imageUrl: "/images/mars.jpg",
       // demoUrl: "https://example.com/project1",
       // codeUrl: "https://github.com/yourusername/project1"
     },
