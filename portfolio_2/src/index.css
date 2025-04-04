@@ -964,3 +964,207 @@ section {
     gap: 15px;
   }
 }
+
+/* Portrait Mode */
+@media screen and (orientation: portrait) {
+  .hero-content h1 {
+    font-size: 2.3rem;
+  }
+  
+  .name {
+    font-size: 2.6rem;
+  }
+  
+  .typewriter {
+    font-size: 1.4rem;
+    height: 2.2rem;
+  }
+  
+  .image-border {
+    width: 280px;
+    height: 320px;
+  }
+  
+  .contact-container {
+    gap: 30px;
+  }
+}
+
+/* Landscape Mode */
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  section {
+    padding: 60px 20px;
+    min-height: 120vh;
+  }
+  
+  .hero-container {
+    min-height: 120vh;
+  }
+  
+  .image-border {
+    width: 220px;
+    height: 240px;
+  }
+  
+  .section-title {
+    margin-bottom: 40px;
+  }
+  
+  .skill-card, .project-card, .contact-info, .contact-form-container {
+    padding: 20px;
+  }
+}
+
+/* Small Screens (e.g. iPhone SE, older phones) */
+@media screen and (max-width: 375px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .name {
+    font-size: 2.4rem;
+  }
+  
+  .typewriter {
+    font-size: 1.3rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .image-border {
+    width: 220px;
+    height: 240px;
+  }
+  
+  .project-image {
+    height: 160px;
+  }
+  
+  .contact-method {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+/* Medium-sized phones */
+@media screen and (min-width: 376px) and (max-width: 480px) {
+  .navbar-container {
+    padding: 0 15px;
+  }
+  
+  .skill-icon {
+    font-size: 2.2rem;
+  }
+  
+  .project-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Large Phones */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .project-card {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  .hero-buttons {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
+
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .about-content {
+    padding: 0 30px;
+  }
+  
+  .projects-container {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+  
+  .contact-container {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+}
+
+/* Width-based media queries for specific components */
+@media screen and (max-width: 340px) {
+  .tech-stack {
+    gap: 5px;
+  }
+  
+  .tech-tag {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+}
+
+/* Height-based media queries */
+@media screen and (max-height: 700px) {
+  .section-title {
+    margin-bottom: 30px;
+  }
+  
+  .hero-content {
+    padding: 20px;
+  }
+  
+  .hero-description {
+    margin-bottom: 20px;
+  }
+}
+
+/* Device-specific fixes */
+/* For notched devices like iPhone X and newer */
+@supports (padding: max(0px)) {
+  .navbar {
+    padding-left: max(15px, env(safe-area-inset-left));
+    padding-right: max(15px, env(safe-area-inset-right));
+  }
+  
+  .contact-modal-overlay {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+}
+
+/* For foldable devices */
+@media screen and (max-width: 320px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .name {
+    font-size: 2.2rem;
+  }
+  
+  .section-title {
+    font-size: 1.7rem;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+  }
+}
