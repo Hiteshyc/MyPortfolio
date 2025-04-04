@@ -852,118 +852,14 @@ section {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Media Queries */
-@media (max-width: 992px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .project-card.active {
-    grid-template-columns: 1fr;
-  }
-}
 
-@media (max-width: 768px) {
-  .navbar-container {
-    position: relative;
-  }
-  
-  .nav-links {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background-color: rgba(18, 18, 18, 0.95);
-    backdrop-filter: blur(10px);
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: all 0.4s ease;
-    z-index: 1;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  }
-  
-  .nav-links.active {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-  
-  .nav-item {
-    margin: 10px 0;
-  }
-  
-  .resume-link {
-    margin: 15px 0 0;
-  }
-  
-  .contact-btn {
-    display: none;
-  }
-  
-  .mobile-menu-btn {
-    display: block;
-  }
-  
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-  
-  .name {
-    font-size: 2.8rem;
-  }
-  
-  .typewriter {
-    font-size: 1.5rem;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .btn {
-    width: 100%;
-  }
-  
-  .skills-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .projects-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .about-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-}
 
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .about-image {
-    width: 100%;
-  }
-  
-  .image-border {
-    width: 250px;
-    height: 250px;
-  }
-  
-  .footer-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-}
+
+
+
+
+
+
 
 /* Portrait Mode */
 @media screen and (orientation: portrait) {
