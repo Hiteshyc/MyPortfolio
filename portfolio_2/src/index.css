@@ -860,207 +860,401 @@ section {
 
 
 
+/* Mobile and Responsive Fixes */
 
-/* Portrait Mode */
-@media screen and (orientation: portrait) {
-  .hero-content h1 {
-    font-size: 2.3rem;
-  }
-  
-  .name {
-    font-size: 2.6rem;
-  }
-  
-  .typewriter {
-    font-size: 1.4rem;
-    height: 2.2rem;
-  }
-  
-  .image-border {
-    width: 280px;
-    height: 320px;
-  }
-  
-  .contact-container {
-    gap: 30px;
-  }
-}
-
-/* Landscape Mode */
-@media screen and (orientation: landscape) and (max-height: 600px) {
+/* Global Mobile Adjustments */
+@media screen and (max-width: 768px) {
+  /* Improved container padding */
   section {
-    padding: 60px 20px;
-    min-height: 120vh;
+    padding: 80px 15px;
   }
   
-  .hero-container {
-    min-height: 120vh;
-  }
-  
-  .image-border {
-    width: 220px;
-    height: 240px;
-  }
-  
+  /* Better text alignment */
   .section-title {
+    font-size: 2rem;
     margin-bottom: 40px;
   }
   
-  .skill-card, .project-card, .contact-info, .contact-form-container {
-    padding: 20px;
-  }
-}
-
-/* Small Screens (e.g. iPhone SE, older phones) */
-@media screen and (max-width: 375px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  
-  .name {
-    font-size: 2.4rem;
+  /* Fixed width containers */
+  .hero-content, 
+  .about-content, 
+  .skill-card, 
+  .project-card, 
+  .contact-info, 
+  .contact-form-container {
+    width: 100%;
+    max-width: 100%;
   }
   
-  .typewriter {
-    font-size: 1.3rem;
-  }
-  
-  .hero-description {
-    font-size: 1rem;
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-  }
-  
-  .image-border {
-    width: 220px;
-    height: 240px;
-  }
-  
-  .project-image {
-    height: 160px;
-  }
-  
-  .contact-method {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .contact-icon {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-}
-
-/* Medium-sized phones */
-@media screen and (min-width: 376px) and (max-width: 480px) {
-  .navbar-container {
-    padding: 0 15px;
-  }
-  
-  .skill-icon {
-    font-size: 2.2rem;
-  }
-  
-  .project-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-/* Large Phones */
-@media screen and (min-width: 481px) and (max-width: 767px) {
-  .project-card {
-    max-width: 450px;
-    margin: 0 auto;
-  }
-  
-  .hero-buttons {
-    max-width: 350px;
-    margin: 0 auto;
-  }
-}
-
-/* Tablets */
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .about-content {
-    padding: 0 30px;
-  }
-  
-  .projects-container {
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  }
-  
+  /* Ensure all content centers properly */
+  .about-container,
+  .skills-container,
+  .projects-container,
   .contact-container {
-    max-width: 650px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Make sure grids stack properly */
+  .skills-container,
+  .projects-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  
+  /* Fix button alignment */
+  .hero-buttons,
+  .about-buttons,
+  .project-links {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  /* Ensure navbar is properly fixed */
+  .navbar {
+    width: 100%;
+  }
+  
+  /* Properly center modal content */
+  .contact-modal-container {
+    width: 100%;
   }
 }
 
-/* Width-based media queries for specific components */
-@media screen and (max-width: 340px) {
-  .tech-stack {
-    gap: 5px;
-  }
-  
-  .tech-tag {
-    padding: 4px 8px;
-    font-size: 0.8rem;
-  }
-  
+/* Extra Small Devices (phones, 320px and up) */
+@media screen and (min-width: 320px) and (max-width: 479px) {
+  /* Navbar adjustments */
   .logo {
     width: 40px;
     height: 40px;
     font-size: 1.3rem;
   }
-}
-
-/* Height-based media queries */
-@media screen and (max-height: 700px) {
-  .section-title {
-    margin-bottom: 30px;
-  }
   
+  /* Hero section adjustments */
   .hero-content {
-    padding: 20px;
+    padding: 20px 15px;
   }
   
-  .hero-description {
-    margin-bottom: 20px;
-  }
-}
-
-/* Device-specific fixes */
-/* For notched devices like iPhone X and newer */
-@supports (padding: max(0px)) {
-  .navbar {
-    padding-left: max(15px, env(safe-area-inset-left));
-    padding-right: max(15px, env(safe-area-inset-right));
-  }
-  
-  .contact-modal-overlay {
-    padding-left: max(20px, env(safe-area-inset-left));
-    padding-right: max(20px, env(safe-area-inset-right));
-    padding-bottom: max(20px, env(safe-area-inset-bottom));
-  }
-}
-
-/* For foldable devices */
-@media screen and (max-width: 320px) {
   .hero-content h1 {
     font-size: 1.8rem;
+  }
+  
+  .greeting {
+    font-size: 1.2rem;
   }
   
   .name {
     font-size: 2.2rem;
   }
   
-  .section-title {
-    font-size: 1.7rem;
+  .typewriter {
+    font-size: 1.3rem;
+    height: 2rem;
   }
   
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+  
+  /* Button adjustments */
   .btn {
     padding: 10px 20px;
+    width: 100%;
+    max-width: 250px;
   }
+  
+  /* About section adjustments */
+  .about-wrapper {
+    padding: 60px 15px;
+  }
+  
+  .image-border {
+    width: 220px;
+    height: 250px;
+    margin: 0 auto 30px;
+  }
+  
+  .about-content {
+    text-align: center;
+    padding: 0 10px;
+  }
+  
+  .about-content p {
+    font-size: 1rem;
+  }
+  
+  /* Skills section adjustments */
+  .skills-wrapper {
+    padding: 60px 15px;
+  }
+  
+  .skill-card {
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  /* Project section adjustments */
+  .projects-wrapper {
+    padding: 60px 15px;
+  }
+  
+  .project-card {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .project-image {
+    height: 180px;
+  }
+  
+  .project-content {
+    padding: 20px 15px;
+  }
+  
+  .tech-stack {
+    justify-content: center;
+  }
+  
+  .tech-tag {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    margin: 3px;
+  }
+  
+  /* Contact section adjustments */
+  .contact-wrapper {
+    padding: 60px 15px;
+  }
+  
+  .contact-info,
+  .contact-form-container {
+    padding: 20px 15px;
+    width: 100%;
+  }
+  
+  .contact-method {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  .contact-icon {
+    margin: 0 0 10px 0;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Footer adjustments */
+  .footer {
+    padding: 40px 15px 20px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Small Devices (large phones, 480px and up) */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  /* Hero section adjustments */
+  .hero-content {
+    padding: 25px;
+    max-width: 450px;
+  }
+  
+  /* Button width adjustments */
+  .btn {
+    width: auto;
+  }
+  
+  /* Image adjustments */
+  .image-border {
+    width: 280px;
+    height: 320px;
+  }
+  
+  /* Card sizing for better fit */
+  .skill-card,
+  .project-card {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Contact form sizing */
+  .contact-info,
+  .contact-form-container {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Footer link adjustments */
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Portrait Mode Specific Fixes */
+@media screen and (orientation: portrait) {
+  /* Center all content properly */
+  .hero-content,
+  .about-container,
+  .skills-container,
+  .projects-container,
+  .contact-container {
+    text-align: center;
+  }
+  
+  /* Ensure buttons stack properly on portrait */
+  .hero-buttons,
+  .about-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Adjust image on portrait */
+  .about-image {
+    margin-bottom: 30px;
+  }
+  
+  /* Make form inputs larger for touch */
+  .form-group input,
+  .form-group textarea {
+    padding: 14px;
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* Landscape Mode Specific Fixes */
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  /* Adjust vertical spacing */
+  section {
+    padding: 40px 20px;
+    min-height: 120vh;
+  }
+  
+  /* Make hero content more compact */
+  .hero-content {
+    padding: 20px;
+  }
+  
+  .hero-content h1 {
+    margin-bottom: 10px;
+  }
+  
+  .hero-description {
+    margin-bottom: 20px;
+  }
+  
+  /* Adjust image size for landscape */
+  .image-border {
+    width: 180px;
+    height: 200px;
+  }
+  
+  /* Improve about section layout for landscape */
+  .about-container {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+  }
+  
+  /* Better button layout for landscape */
+  .hero-buttons,
+  .about-buttons {
+    flex-direction: row;
+  }
+  
+  /* Adjust card sizes */
+  .skill-card, 
+  .project-card, 
+  .contact-info, 
+  .contact-form-container {
+    padding: 15px;
+  }
+}
+
+/* Fix for navbar mobile menu */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    width: 100%;
+    top: 80px;
+  }
+  
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  
+  .nav-item {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+  }
+  
+  .resume-link {
+    margin: 10px auto;
+    display: inline-block;
+  }
+}
+
+/* Fix for notched devices */
+@supports (padding: max(0px)) {
+  .navbar-container,
+  .hero-content,
+  .about-container,
+  .skills-container,
+  .projects-container,
+  .contact-container,
+  .footer-container {
+    padding-left: max(15px, env(safe-area-inset-left));
+    padding-right: max(15px, env(safe-area-inset-right));
+  }
+  
+  body {
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Additional scrolling fix */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Fix for form elements on mobile */
+input, 
+textarea, 
+select, 
+button {
+  font-size: 16px; /* Prevents iOS zoom on focus */
+  max-width: 100%;
+}
+
+/* Fix for project card active state on mobile */
+@media screen and (max-width: 768px) {
+  .project-card.active {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-card.active .project-image {
+    height: 200px;
+  }
+}
+
+/* Fix for mobile menu button */
+.mobile-menu-btn {
+  z-index: 1001;
 }
