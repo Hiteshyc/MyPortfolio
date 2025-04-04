@@ -1184,30 +1184,168 @@ section {
   }
 }
 
-/* Fix for navbar mobile menu */
+
+
+
+/* Mobile Navigation Bar Improvements */
+
+/* Mobile Menu General Fixes */
 @media screen and (max-width: 768px) {
-  .nav-links {
+  /* Navbar container positioning */
+  .navbar {
+    padding: 10px 0;
+  }
+  
+  .navbar-container {
     width: 100%;
-    top: 80px;
-  }
-  
-  .nav-links.active {
+    padding: 0 15px;
     display: flex;
-    flex-direction: column;
-    padding: 20px 0;
+    justify-content: space-between;
+    align-items: center;
   }
   
+  /* Mobile menu button styling */
+  .mobile-menu-btn {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 5px;
+  }
+  
+  /* Navigation links container */
+  .nav-links {
+    position: fixed;
+    top: 70px; /* Match navbar height */
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: all 0.4s ease;
+    z-index: 999;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+  
+  /* Active state for mobile menu */
+  .nav-links.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    padding: 20px 0;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+  
+  /* Navigation items */
   .nav-item {
     width: 100%;
+    margin: 0;
     text-align: center;
-    padding: 12px 0;
+    padding: 15px 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
   }
   
+  /* Animation for nav items when menu is active */
+  .nav-links.active .nav-item {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Sequential animation delay for nav items */
+  .nav-links.active .nav-item:nth-child(1) { transition-delay: 0.1s; }
+  .nav-links.active .nav-item:nth-child(2) { transition-delay: 0.2s; }
+  .nav-links.active .nav-item:nth-child(3) { transition-delay: 0.3s; }
+  .nav-links.active .nav-item:nth-child(4) { transition-delay: 0.4s; }
+  
+  /* Resume link styling */
   .resume-link {
-    margin: 10px auto;
+    margin: 15px auto;
+    padding: 10px 24px;
     display: inline-block;
+    width: auto;
+  }
+  
+  /* Hover underline improvements */
+  .nav-item::after {
+    bottom: 5px;
+  }
+  
+  /* Contact button */
+  .contact-btn {
+    display: none; /* Hide in mobile as per original design */
   }
 }
+
+/* Better navbar scrolled state on mobile */
+@media screen and (max-width: 768px) {
+  .navbar.scrolled {
+    background-color: rgba(14, 14, 14, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Improve logo visibility */
+  .logo {
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Animate menu button for better feedback */
+  .mobile-menu-btn.active {
+    color: var(--accent-color);
+    transform: rotate(90deg);
+    transition: all 0.3s ease;
+  }
+}
+
+/* Fix double-tap issue on iOS */
+@media screen and (max-width: 768px) {
+  .nav-item, .mobile-menu-btn {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Fix for notched devices */
+@supports (padding: max(0px)) {
+  .navbar, .nav-links {
+    padding-left: max(15px, env(safe-area-inset-left));
+    padding-right: max(15px, env(safe-area-inset-right));
+  }
+  
+  .nav-links {
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Semi-transparent background for better visibility */
+@media screen and (max-width: 768px) {
+  .navbar {
+    background-color: rgba(18, 18, 18, 0.9);
+    backdrop-filter: blur(8px);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* Fix for notched devices */
 @supports (padding: max(0px)) {
