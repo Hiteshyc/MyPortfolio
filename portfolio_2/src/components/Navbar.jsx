@@ -46,7 +46,7 @@ function Navbar({ setIsContactOpen }) {
             </a>
           ))}
           <a 
-            href="/resume.pdf" 
+            href="/documents/resume.pdf" 
             className="resume-link" 
             target="_blank" 
             rel="noopener noreferrer"
